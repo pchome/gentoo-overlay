@@ -1,2 +1,2 @@
-# myownbackup_gentoo
-MyOwn gentoo overlay
+# gentoo-overlay
+My gentoo overlay
