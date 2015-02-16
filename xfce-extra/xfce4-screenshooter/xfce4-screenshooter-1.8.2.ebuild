@@ -8,7 +8,7 @@ inherit xfconf
 
 DESCRIPTION="Xfce4 screenshooter application and panel plugin"
 HOMEPAGE="http://goodies.xfce.org/projects/applications/xfce4-screenshooter"
-SRC_URI="http://git.xfce.org/apps/xfce4-screenshooter/snapshot/xfce4-screenshooter-7e75eaaa64d69cb29d18a2b41bfe54a39bd2476f.tar.bz2"
+SRC_URI="mirror://xfce/src/apps/${PN}/${PV%.*}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -30,8 +30,6 @@ DEPEND="${RDEPEND}
 	dev-util/intltool
 	virtual/pkgconfig"
 
-S="${WORKDIR}/xfce4-screenshooter-7e75eaaa64d69cb29d18a2b41bfe54a39bd2476f"
-
 pkg_setup() {
 	XFCONF=(
 		--docdir="${EPREFIX}"/usr/share/doc/${PF}
@@ -39,14 +37,10 @@ pkg_setup() {
 		--enable-xfixes
 		)
 
-	DOCS=( AUTHORS NEWS README TODO )
+	DOCS=( AUTHORS ChangeLog NEWS README TODO )
 }
 
 src_prepare() {
-	#autogen.sh
-	test -d m4 || mkdir m4
-	xdt-autogen
-
 	# http://bugzilla.xfce.org/show_bug.cgi?id=8822
 	sed -i -e 's:$(datadir)/xfce4/doc:$(docdir)/html:' Makefile.am || die
 	# http://bugzilla.xfce.org/show_bug.cgi?id=10030
