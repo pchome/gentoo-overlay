@@ -47,7 +47,7 @@ src_install() {
 	insinto /usr/share/${PN}
 
 	doman documentation/man-pages/phoronix-test-suite.1
-	dodoc AUTHORS CHANGE-LOG
+	dodoc AUTHORS ChangeLog
 	dohtml -r documentation/
 	doicon pts-core/static/images/phoronix-test-suite.png
 	doicon pts-core/static/images/openbenchmarking.png
@@ -58,7 +58,7 @@ src_install() {
 	exeinto /usr/bin
 	doexe phoronix-test-suite
 
-	fperms a+x /usr/share/${PN}/pts-core/static/scripts/root-access.sh
+	fperms a+x /usr/share/${PN}/pts-core/static/root-access.sh
 	fperms a+x /usr/share/${PN}/pts-core/external-test-dependencies/scripts/install-gentoo-packages.sh
 
 	dobashcompletion pts-core/static/bash_completion ${PN}
