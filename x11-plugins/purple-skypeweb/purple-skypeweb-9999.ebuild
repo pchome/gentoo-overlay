@@ -6,12 +6,15 @@ EAPI=5
 inherit eutils git-2
 DESCRIPTION="SkypeWeb Plugin for Pidgin"
 HOMEPAGE="https://github.com/EionRobb/skype4pidgin/tree/master/skypeweb"
-EGIT_REPO_URI="https://github.com/EionRobb/skype4pidgin.git"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="pchome-fork"
+
+use pchome-fork && REPO_OWNER="pchome" || REPO_OWNER="EionRobb"
+
+EGIT_REPO_URI="https://github.com/${REPO_OWNER}/skype4pidgin.git"
 
 DEPEND=""
 RDEPEND="${DEPEND}
