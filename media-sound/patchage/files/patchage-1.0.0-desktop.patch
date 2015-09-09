@@ -1,8 +1,0 @@
---- patchage.desktop.in.old	2014-05-14 19:32:25.248898125 +0300
-+++ patchage.desktop.in	2014-05-14 19:33:12.131901877 +0300
-@@ -5,4 +5,4 @@
- Terminal=false
- Icon=@APP_INSTALL_NAME@
- Type=Application
--Categories=AudioVideo;Audio;
-+Categories=Application;AudioVideo;Audio;

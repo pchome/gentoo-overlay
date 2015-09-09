@@ -22,4 +22,6 @@ RDEPEND="${DEPEND}
 "
 src_prepare() {
 	S="${S}/skypeweb/"
+	#sed -e "s/ purple/ purple-3/mg" -i ${S}/Makefile || die
+	#sed -e "s/json-glib-1.0 purple-3/json-glib-1.0 purple-3 gplugin/mg" -i ${S}/Makefile || die
 }
