@@ -30,9 +30,17 @@ src_install() {
 	dodoc README
 	rm -f README LICENSE*
 
-	insinto /usr/share/themes/${MY_PN}_compact/xfwm4
-	doins xfwm4_compact/*
-	rm -rf xfwm4_compact
+	insinto /usr/share/themes/${MY_PN}-compact/xfwm4
+	doins xfwm4-compact/*
+	rm -rf xfwm4-compact
+
+	insinto /usr/share/themes/${MY_PN}-a11y/xfwm4
+	doins xfwm4-a11y/*
+	rm -rf xfwm4-a11y
+
+	insinto /usr/share/themes/${MY_PN}-bright/xfce-notify-4.0
+	doins xfce-notify-4.0_bright/*
+	rm -rf xfce-notify-4.0_bright
 
 	use ayatana || rm -rf unity
 	use gnome || rm -rf metacity-1
